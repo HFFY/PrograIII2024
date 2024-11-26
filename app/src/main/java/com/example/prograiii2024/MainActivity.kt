@@ -16,5 +16,11 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        var ejemplo = funcionDePrueba2()
+        ejemplo = "asi deberia funcionar un merge $ejemplo"
+    }
+
+    fun funcionDePrueba2() : String{
+        return "para ejemplificar un merge"
     }
 }
