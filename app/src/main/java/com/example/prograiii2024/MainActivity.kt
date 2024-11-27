@@ -17,9 +17,15 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         estaEsnaFuncionDePrueba()
+        var ejemplo = funcionDePrueba2()
+        ejemplo = "asi deberia funcionar un merge $ejemplo"
     }
 
     fun estaEsnaFuncionDePrueba(){
         val prueba = "test"
+    }
+
+    fun funcionDePrueba2() : String{
+        return "para ejemplificar un merge"
     }
 }
