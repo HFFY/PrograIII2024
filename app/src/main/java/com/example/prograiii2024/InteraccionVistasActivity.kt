@@ -9,29 +9,25 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.prograiii2024.databinding.ActivityInteraccionVistasBinding
 
 class InteraccionVistasActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityInteraccionVistasBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_interaccion_vistas)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
-        val textViewGuardado: TextView = findViewById(R.id.text_view_guardado)
-        val buttonGuardar: Button = findViewById(R.id.button_guardar)
-        val buttonCambiarActivity: Button = findViewById(R.id.button_cambiar_activity)
-        val editTextGuardar: EditText = findViewById(R.id.edit_text_guardar)
+        binding = ActivityInteraccionVistasBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-        buttonGuardar.setOnClickListener {
-            val textoGuardado = editTextGuardar.text.toString()
-            textViewGuardado.text = textoGuardado
-            editTextGuardar.setText("")
+        binding.buttonGuardar.setOnClickListener {
+            val textoGuardado = binding.editTextGuardar.text.toString()
+            binding.textViewGuardado.text = textoGuardado
+            binding.editTextGuardar.setText("")
         }
 
-        buttonCambiarActivity.setOnClickListener {
+        binding.buttonCambiarActivity.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
