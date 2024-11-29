@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">PrograIII2024</string>
+    <string name="app_name">Progra III 2024</string>
+    <string name="string_guardar">GUARDAR</string>
+    <string name="string_nombre">Nombre</string>
+    <string name="cambiar_activity">CAMBIAR ACTIVITY</string>
+    <string name="mostrar_texto">Aqui se mostrara el nuevo texto</string>
+    <string name="texto_a_guardar">Texto a guardar</string>
 </resources>

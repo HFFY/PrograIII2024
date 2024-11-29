@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.prograiii2024.databinding.ActivityInteraccionVistasBinding
+import com.example.prograiii2024.MainActivity.Companion.ID_PASO_NOMBRE
 
 class InteraccionVistasActivity : AppCompatActivity() {
 
@@ -28,8 +29,9 @@ class InteraccionVistasActivity : AppCompatActivity() {
         }
 
         binding.buttonCambiarActivity.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            val intentMainActivity = Intent(this, MainActivity::class.java)
+            intentMainActivity.putExtra(ID_PASO_NOMBRE,"Hugo")
+            startActivity(intentMainActivity)
         }
     }
 }

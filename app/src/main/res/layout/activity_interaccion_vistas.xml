@@ -14,19 +14,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:hint="Texto a guardar"/>
+        android:hint="@string/texto_a_guardar"/>
 
     <Button
         android:id="@+id/button_guardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GUARDAR"/>
+        android:text="@string/string_guardar"/>
 
     <TextView
         android:id="@+id/text_view_guardado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Aqui se mostrara el nuevo texto"
+        android:text="@string/mostrar_texto"
+        style="@style/TitulosEnRojo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/string_nombre"
         android:layout_margin="20dp"
         android:textSize="25sp"/>
 
@@ -34,6 +40,6 @@
         android:id="@+id/button_cambiar_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CAMBIAR ACTIVITY"/>
+        android:text="@string/cambiar_activity"/>
 
 </LinearLayout>
