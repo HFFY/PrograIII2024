@@ -4,4 +4,9 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+    <style name="TitulosEnRojo">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/azul</item>
+        <item name="android:layout_margin">30dp</item>
+    </style>
 </resources>

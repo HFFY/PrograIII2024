@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.PrograIII2024" parent="Base.Theme.PrograIII2024" />
+
+    <style name="TitulosEnRojo">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/rojo</item>
+        <item name="android:layout_margin">30dp</item>
+    </style>
 </resources>
