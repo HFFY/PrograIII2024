@@ -33,5 +33,7 @@ class InteraccionVistasActivity : AppCompatActivity() {
             intentMainActivity.putExtra(ID_PASO_NOMBRE,"Hugo")
             startActivity(intentMainActivity)
         }
+
+        binding.textViewGuardado.text
     }
 }
