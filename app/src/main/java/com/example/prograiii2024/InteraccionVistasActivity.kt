@@ -34,6 +34,11 @@ class InteraccionVistasActivity : AppCompatActivity() {
             startActivity(intentMainActivity)
         }
 
+        binding.buttonCambiarActivityScroll.setOnClickListener {
+            val intentScroll = Intent(this, EjemploScrollActivity::class.java)
+            startActivity(intentScroll)
+        }
+
         binding.textViewGuardado.text
     }
 }

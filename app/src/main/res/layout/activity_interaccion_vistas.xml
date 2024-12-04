@@ -35,4 +35,11 @@
         android:layout_height="wrap_content"
         android:text="@string/cambiar_activity"/>
 
+    <Button
+        android:id="@+id/button_cambiar_activity_scroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/cambiar_scroll"/>
+
 </LinearLayout>

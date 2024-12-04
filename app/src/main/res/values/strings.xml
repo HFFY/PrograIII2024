@@ -3,6 +3,7 @@
     <string name="string_guardar">GUARDAR</string>
     <string name="string_nombre">Nombre</string>
     <string name="cambiar_activity">CAMBIAR ACTIVITY</string>
+    <string name="cambiar_scroll">VER EJEMPLO SCROLL</string>
     <string name="mostrar_texto">Aqui se mostrara el nuevo texto</string>
     <string name="texto_a_guardar">Texto a guardar</string>
 </resources>
