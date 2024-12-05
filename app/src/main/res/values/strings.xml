@@ -4,6 +4,8 @@
     <string name="string_nombre">Nombre</string>
     <string name="cambiar_activity">CAMBIAR ACTIVITY</string>
     <string name="cambiar_scroll">VER EJEMPLO SCROLL</string>
+    <string name="cambiar_recycler_view">VER EJEMPLO RECYCLER VIEW</string>
     <string name="mostrar_texto">Aqui se mostrara el nuevo texto</string>
     <string name="texto_a_guardar">Texto a guardar</string>
+    <string name="texto_vulkan_vive">Vulkan Vive!</string>
 </resources>

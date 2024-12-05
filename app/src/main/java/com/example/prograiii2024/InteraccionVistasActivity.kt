@@ -30,13 +30,18 @@ class InteraccionVistasActivity : AppCompatActivity() {
 
         binding.buttonCambiarActivity.setOnClickListener {
             val intentMainActivity = Intent(this, MainActivity::class.java)
-            intentMainActivity.putExtra(ID_PASO_NOMBRE,"Hugo")
+            intentMainActivity.putExtra(ID_PASO_NOMBRE, "Hugo")
             startActivity(intentMainActivity)
         }
 
         binding.buttonCambiarActivityScroll.setOnClickListener {
             val intentScroll = Intent(this, EjemploScrollActivity::class.java)
             startActivity(intentScroll)
+        }
+
+        binding.buttonCambiarRecyclerView.setOnClickListener {
+            val intentRecyclerEjemplo = Intent(this, RecyclerEjemploActivity::class.java)
+            startActivity(intentRecyclerEjemplo)
         }
 
         binding.textViewGuardado.text
