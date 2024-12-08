@@ -8,4 +8,7 @@
     <string name="mostrar_texto">Aqui se mostrara el nuevo texto</string>
     <string name="texto_a_guardar">Texto a guardar</string>
     <string name="texto_vulkan_vive">Vulkan Vive!</string>
+    <string name="ejemplo_recycler_title">En esta activity mostramos un ejemplo de Recycler view</string>
+    <string name="ejemplo_recycler_final">En esta activity mostramos el final de un ejemplo de Recycler view</string>
+
 </resources>

@@ -10,9 +10,23 @@
         android:src="@color/verde"/>
 
     <TextView
-        android:id="@+id/text_view_ejemplo"
+        android:id="@+id/text_view_nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/text_view_fecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/text_view_cantidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:textSize="20sp"/>
 
     <ImageView

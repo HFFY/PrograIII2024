@@ -5,11 +5,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.prograiii2024.databinding.ItemEjemploVistaBinding
+import com.example.prograiii2024.dataclasses.Producto
 
 class RecyclerEjemploAdapter :
     RecyclerView.Adapter<RecyclerEjemploAdapter.EjemploViewHolder>() {
 
-    private val listaDatos = mutableListOf<String>()
+    private val listaDatos = mutableListOf<Producto>()
     private var context: Context? = null
 
     override fun onCreateViewHolder(
@@ -33,13 +34,17 @@ class RecyclerEjemploAdapter :
     override fun getItemCount(): Int = listaDatos.size
 
     inner class EjemploViewHolder(private val binding: ItemEjemploVistaBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-        fun binding(data: String) {
-            binding.textViewEjemplo.text = data
+        RecyclerView.ViewHolder(binding.root)  {
+        fun binding(data: Producto) {
+
+            binding.textViewNombre.text = data.nombre
+            binding.textViewFecha.text = data.fechaDeVencimiento
+            binding.textViewCantidad.text = data.cantidad.toString()
+
         }
     }
 
-    fun addDataToList(list: List<String>) {
+    fun addDataToList(list: List<Producto>) {
         listaDatos.clear()
         listaDatos.addAll(list)
     }
