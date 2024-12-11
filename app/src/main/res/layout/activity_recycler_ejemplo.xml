@@ -57,6 +57,7 @@
 
 
     <Button
+        android:id="@+id/button_ejemplo_estatico"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Ejemplo estatico"

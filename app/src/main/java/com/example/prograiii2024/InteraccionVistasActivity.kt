@@ -9,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.bumptech.glide.Glide
 import com.example.prograiii2024.databinding.ActivityInteraccionVistasBinding
 import com.example.prograiii2024.MainActivity.Companion.ID_PASO_NOMBRE
 
@@ -45,5 +46,7 @@ class InteraccionVistasActivity : AppCompatActivity() {
         }
 
         binding.textViewGuardado.text
+
+        Glide.with(this).load("URL").into(binding.imagePantallaInicial)
     }
 }
