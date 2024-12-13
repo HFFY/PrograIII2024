@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.prograiii2024.MainActivity.Companion.CLAVE_BOOLEAN
 import com.example.prograiii2024.MainActivity.Companion.CLAVE_INT
@@ -16,13 +17,17 @@ import com.example.prograiii2024.MainActivity.Companion.CLAVE_YA_GUARDO_DATOS
 import com.example.prograiii2024.adapters.RecyclerEjemploAdapter.RecyclerEjemploAdapter
 import com.example.prograiii2024.databinding.ActivityRecyclerEjemploBinding
 import com.example.prograiii2024.dataclasses.Producto
+import com.example.prograiii2024.room.EstuduanteAppAccess
 import com.google.gson.Gson
+import kotlinx.coroutines.launch
 
 class RecyclerEjemploActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRecyclerEjemploBinding
 
     private val recylcerEjemploAdapter by lazy { RecyclerEjemploAdapter() }
+
+    val dbAccess = applicationContext as EstuduanteAppAccess
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +36,8 @@ class RecyclerEjemploActivity : AppCompatActivity() {
         setContentView(view)
         setUpRecyclerView()
         guardarDatos()
+
+        val estudanteId = dbAccess.room.estudianteDao().obtenerPorId("ID")
     }
 
     fun setUpRecyclerView() {
@@ -127,7 +134,8 @@ class RecyclerEjemploActivity : AppCompatActivity() {
             }
             binding.textViewFinal.text = "Se Guardaron los datos"
         } else {
-            binding.textViewFinal.text = "No se Guardaron los Datos porque ya estaban en el archivo shared"
+            binding.textViewFinal.text =
+                "No se Guardaron los Datos porque ya estaban en el archivo shared"
         }
     }
 }
