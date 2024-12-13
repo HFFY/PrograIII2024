@@ -6,7 +6,7 @@ import androidx.room.RoomDatabase
 import com.example.prograiii2024.dataclasses.Estudiante
 
 @Database(
-    entities = [Person::class],
+    entities = [Estudiante::class],
     version = 1
 )
 abstract class EstudianteDataBase: RoomDatabase() {

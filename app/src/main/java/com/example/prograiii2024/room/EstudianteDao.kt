@@ -10,17 +10,17 @@ import com.example.prograiii2024.dataclasses.Estudiante
 interface EstudianteDao {
 
     @Query("SELECT * FROM Estudiante")
-    fun obtenerTodosLosEstudiante(): List<Estudiante>
+    suspend fun obtenerTodosLosEstudiante(): List<Estudiante>
 
     @Query("SELECT * FROM Estudiante WHERE id =:id")
-    fun obtenerPorId(id: String): Estudiante
+    suspend fun obtenerPorId(id: String): Estudiante
 
     @Update
-    fun update(estudiante: Estudiante)
+    suspend fun update(estudiante: Estudiante)
 
     @Insert
-    fun insert(estudiante: Estudiante)
+    suspend fun insert(estudiante: Estudiante)
 
     @Insert
-    fun insertarEstudiantes(estudiante: List<Estudiante>)
+    suspend fun insertarEstudiantes(estudiante: List<Estudiante>)
 }

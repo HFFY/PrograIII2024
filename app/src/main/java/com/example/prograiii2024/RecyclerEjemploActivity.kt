@@ -36,8 +36,10 @@ class RecyclerEjemploActivity : AppCompatActivity() {
         setContentView(view)
         setUpRecyclerView()
         guardarDatos()
-
-        val estudanteId = dbAccess.room.estudianteDao().obtenerPorId("ID")
+        lifecycleScope.launch {
+            val estudanteId = dbAccess.room.estudianteDao().obtenerPorId("ID")
+            dbAccess.room.estudianteDao().insertarEstudiantes(listOf())
+        }
     }
 
     fun setUpRecyclerView() {
