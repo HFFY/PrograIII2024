@@ -2,6 +2,7 @@ package com.example.prograiii2024.room
 
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import com.example.prograiii2024.dataclasses.Estudiante
@@ -18,7 +19,7 @@ interface EstudianteDao {
     @Update
     suspend fun update(estudiante: Estudiante)
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(estudiante: Estudiante)
 
     @Insert

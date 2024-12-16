@@ -16,8 +16,10 @@ import com.example.prograiii2024.MainActivity.Companion.CLAVE_STR
 import com.example.prograiii2024.MainActivity.Companion.CLAVE_YA_GUARDO_DATOS
 import com.example.prograiii2024.adapters.RecyclerEjemploAdapter.RecyclerEjemploAdapter
 import com.example.prograiii2024.databinding.ActivityRecyclerEjemploBinding
+import com.example.prograiii2024.dataclasses.Estudiante
 import com.example.prograiii2024.dataclasses.Producto
-import com.example.prograiii2024.room.EstuduanteAppAccess
+import com.example.prograiii2024.room.EstudianteDataBase
+import com.example.prograiii2024.room.EstudianteDataBase.Companion.getDatabase
 import com.google.gson.Gson
 import kotlinx.coroutines.launch
 
@@ -26,19 +28,39 @@ class RecyclerEjemploActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRecyclerEjemploBinding
 
     private val recylcerEjemploAdapter by lazy { RecyclerEjemploAdapter() }
-
-    val dbAccess = applicationContext as EstuduanteAppAccess
+    private lateinit var dbAccess: EstudianteDataBase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRecyclerEjemploBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        setUpRecyclerView()
-        guardarDatos()
+//        setUpRecyclerView()
+//        guardarDatos()
+        dbAccess = getDatabase(this)
         lifecycleScope.launch {
-            val estudanteId = dbAccess.room.estudianteDao().obtenerPorId("ID")
-            dbAccess.room.estudianteDao().insertarEstudiantes(listOf())
+            dbAccess.estudianteDao().insert(
+                Estudiante(
+                    nombre = "Hugo2",
+                    codigo = 1234,
+                    edad = 123
+                )
+            )
+            dbAccess.estudianteDao().insert(
+                Estudiante(
+                    nombre = "Hugo3",
+                    codigo = 1234,
+                    edad = 123
+                )
+            )
+            dbAccess.estudianteDao().insert(
+                Estudiante(
+                    nombre = "Hugo",
+                    codigo = 1234,
+                    edad = 123
+                )
+            )
+            setUpRecyclerRoom()
         }
     }
 
@@ -119,6 +141,25 @@ class RecyclerEjemploActivity : AppCompatActivity() {
             val intentPasoSerializable = Intent(this, MainActivity::class.java)
             intentPasoSerializable.putExtra(CLAVE_QUESO, queso)
             startActivity(intentPasoSerializable)
+        }
+    }
+
+    fun setUpRecyclerRoom() {
+        lifecycleScope.launch {
+            val lista = dbAccess.estudianteDao().obtenerTodosLosEstudiante()
+            val recyclerLis: List<Producto> = lista.map {
+                Producto(
+                    nombre = it.nombre,
+                    fechaDeVencimiento = it.id.toString(),
+                    cantidad = it.edad + it.codigo
+                )
+            }
+            recylcerEjemploAdapter.addDataToList(recyclerLis)
+            binding.recyclerEjemplo.apply {
+                layoutManager =
+                    LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+                adapter = recylcerEjemploAdapter
+            }
         }
     }
 

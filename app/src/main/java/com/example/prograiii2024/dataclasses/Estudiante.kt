@@ -5,8 +5,8 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Estudiante(
-    @PrimaryKey
-    val id: String,
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0,
     val nombre: String,
     val codigo: Int,
     val edad: Int
